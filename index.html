@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08090d">
-<title>Tayyab &amp; Ajar | Official Website</title>
-<meta name="description" content="Explore Tayyab & Ajar's featured social media highlights and connect directly.">
+<title>Tayyab &amp; Ajar</title>
 <style>
-:root{--bg:#08090d;--panel:#14151b;--gold:#e9c779;--white:#fff;--muted:#aaaab5}
+:root{color-scheme:dark;--bg:#08090d;--panel:#14151b;--gold:#e9c779;--white:#fff;--muted:#aaaab5}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
@@ -24,7 +23,9 @@ nav{min-height:72px;display:flex;align-items:center;justify-content:space-betwee
 .btn:hover{transform:translateY(-3px);box-shadow:0 8px 26px #e9c77935}
 .btn-outline{background:transparent;color:#fff;border-color:#ffffff40}
 .hero{min-height:590px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 42%,#a47b3025,transparent 40%),radial-gradient(ellipse at 10% 90%,#704c2020,transparent 35%)}
-.hero:before{content:"";position:absolute;width:330px;height:330px;border:1px solid #e9c77924;border-radius:50%;right:-90px;top:80px;box-shadow:0 0 0 42px #e9c77908,0 0 0 85px #e9c77905;animation:float 8s ease-in-out infinite}
+.hero-logo{position:absolute;right:8%;top:50%;margin-top:-140px;width:280px;height:280px;border-radius:50%;display:grid;place-items:center;text-align:center;border:1px solid #e9c77966;background:radial-gradient(circle,#e9c7792a,#e9c7790a 60%,transparent 72%),#0d0e13;box-shadow:0 0 0 30px #e9c77908,0 0 0 62px #e9c77905,0 0 60px #e9c77922;animation:float 8s ease-in-out infinite}
+.hero-logo .monogram{font-size:84px;line-height:1}
+.hero-logo .monogram-caption{margin-top:6px}
 .hero-content{position:relative;z-index:1;max-width:760px;padding:88px 0;animation:appear .9s ease both}
 .eyebrow{color:var(--gold);font-size:11px;font-weight:bold;letter-spacing:4px;text-transform:uppercase;margin-bottom:23px}
 h1{font-size:clamp(44px,8.5vw,86px);line-height:1.04;letter-spacing:-3px;margin-bottom:24px}
@@ -61,11 +62,20 @@ footer{border-top:1px solid #ffffff18;padding:25px 0}
 footer p{font-size:12px;color:#858590}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+.video-grid{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#e9c77988 transparent}
+.video-grid::-webkit-scrollbar{height:6px}.video-grid::-webkit-scrollbar-thumb{background:#e9c77988;border-radius:6px}
+.video-card{flex:0 0 38%;min-width:0;scroll-snap-align:start}
+.video-card{border:1px solid #ffffff18;border-radius:14px;background:linear-gradient(145deg,#191a20,#101116);overflow:hidden;transition:.3s}
+.video-card:hover{transform:translateY(-6px);border-color:#e9c77988}
+.video-card video{display:block;width:100%;aspect-ratio:16/9;background:#000;object-fit:contain}
+.video-card h3{font-size:16px;padding:16px 18px}
+@media(max-width:900px){.video-card{flex-basis:62%}}
+@media(max-width:600px){.video-card{flex-basis:84%}}
 @keyframes appear{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(18px)}}
 @media(max-width:700px){
  nav{min-height:66px}.nav-links{gap:11px}.nav-links a{font-size:11px}.nav-contact{display:none}
- .hero{min-height:auto}.hero-content{padding:75px 0 58px}h1{letter-spacing:-2px}.hero p{font-size:14px}
+ .hero{min-height:auto;flex-direction:column;align-items:flex-start;padding-top:56px}.hero-logo{order:-1;position:relative;right:auto;top:auto;margin:0 auto;width:190px;height:190px;box-shadow:0 0 0 18px #e9c77908,0 0 0 38px #e9c77905}.hero-logo .monogram{font-size:58px}.hero-content{padding:56px 0 58px}h1{letter-spacing:-2px}.hero p{font-size:14px}
  section{padding:62px 0}.grid,.about{grid-template-columns:1fr}.card{padding:26px}.brand-art{min-height:250px}
  .footer-inner{justify-content:center;text-align:center}
 }
@@ -74,12 +84,14 @@ footer p{font-size:12px;color:#858590}
 </style>
 </head>
 <body>
+
+
 <header>
   <div class="container">
     <nav>
       <a class="logo" href="#home">AJAR <span>&amp;</span> TAYYAB</a>
       <div class="nav-links">
-        <a href="#home">Home</a><a href="#highlights">Highlights</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#highlights">Highlights</a><a href="#videos">Demo Ads</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
       </div>
       <a class="btn nav-contact" href="https://wa.me/923076231094" target="_blank" rel="noopener">Contact ↗</a>
     </nav>
@@ -87,6 +99,7 @@ footer p{font-size:12px;color:#858590}
 </header>
 <main>
 <section class="hero" id="home">
+  <div class="hero-logo" aria-label="Tayyab and Ajar logo"><div><div class="monogram">T&amp;A</div><span class="monogram-caption">TAYYAB &amp; AJAR</span></div></div>
   <div class="container">
     <div class="hero-content">
       <div class="eyebrow">✦ Welcome to our official website</div>
@@ -111,16 +124,67 @@ footer p{font-size:12px;color:#858590}
     <div class="grid">
       <article class="card reveal">
         <div class="card-icon">📘</div>
-        <h3>Facebook Highlight</h3>
-        <p>Visit our featured Facebook reel and explore the content we've shared with our community.</p>
-        <a class="text-link" href="https://www.facebook.com/share/r/1Df85T21JF/" target="_blank" rel="noopener">WATCH ON FACEBOOK ↗</a>
+        <h3>Facebook Page</h3>
+        <p>Visit our Facebook page and explore the content we've shared with our community.</p>
+        <a class="text-link" href="https://www.facebook.com/share/1CWNABU4Nj/" target="_blank" rel="noopener">VISIT OUR FACEBOOK ↗</a>
       </article>
       <article class="card reveal">
         <div class="card-icon">▶️</div>
-        <h3>YouTube Shorts</h3>
-        <p>Watch our featured short video on YouTube. Open the video and enjoy the highlights.</p>
-        <a class="text-link" href="https://youtube.com/shorts/zSw0a4MHjt0?feature=shared" target="_blank" rel="noopener">WATCH ON YOUTUBE ↗</a>
+        <h3>YouTube Channel</h3>
+        <p>Visit our YouTube channel and watch our latest videos and highlights.</p>
+        <a class="text-link" href="https://youtube.com/@whimzorausa-p6k?feature=shared" target="_blank" rel="noopener">VISIT OUR YOUTUBE ↗</a>
       </article>
+    </div>
+  </div>
+</section>
+<div class="gold-line"></div>
+<section id="videos">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>WATCH NOW</small>
+      <h2>Demo <span class="gold">Ads.</span></h2>
+      <p>Swipe or scroll sideways to watch more of our demo ads.</p>
+    </div>
+    <div class="video-grid" id="adSlider">
+      <article class="video-card">
+        <video controls preload="none" playsinline poster="videos/poster1.jpg"><source src="videos/video1.mp4" type="video/mp4"></video>
+        <h3>Demo Ad 1</h3>
+      </article>
+      <article class="video-card">
+        <video controls preload="none" playsinline poster="videos/poster2.jpg"><source src="videos/video2.mp4" type="video/mp4"></video>
+        <h3>Demo Ad 2</h3>
+      </article>
+      <article class="video-card">
+        <video controls preload="none" playsinline poster="videos/poster3.jpg"><source src="videos/video3.mp4" type="video/mp4"></video>
+        <h3>Demo Ad 3</h3>
+      </article>
+    </div>
+  </div>
+</section>
+<div class="gold-line"></div>
+<section id="services">
+  <div class="container">
+    <div class="section-title reveal">
+      <small>WHAT WE OFFER</small>
+      <h2>Our <span class="gold">Services.</span></h2>
+      <p>Need an ad or a website? We can build both for you. Contact us to get started.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="card-icon">🎬</div>
+        <h3>Ad Making</h3>
+        <p>Need an ad for your product, business or brand? Contact us and we will create eye-catching video and social media ads for you.</p>
+        <a class="text-link" href="https://wa.me/923076231094?text=Hi%2C%20I%20want%20an%20ad%20made." target="_blank" rel="noopener">CONTACT US FOR ADS ↗</a>
+      </article>
+      <article class="card reveal">
+        <div class="card-icon">💻</div>
+        <h3>Website Making</h3>
+        <p>Need a website? Contact us to get yours built. We design clean, modern and mobile-friendly websites that fit your needs.</p>
+        <a class="text-link" href="https://wa.me/923076231094?text=Hi%2C%20I%20want%20a%20website%20made." target="_blank" rel="noopener">CONTACT US FOR WEBSITES ↗</a>
+      </article>
+    </div>
+    <div class="actions reveal" style="justify-content:center;margin-top:32px">
+      <a href="https://wa.me/923076231094" class="btn" target="_blank" rel="noopener">Contact Us on WhatsApp ↗</a>
     </div>
   </div>
 </section>
@@ -143,10 +207,11 @@ footer p{font-size:12px;color:#858590}
     <div class="contact-card reveal">
       <div class="eyebrow">LET'S CONNECT</div>
       <h2>Stay <span class="gold">Connected.</span></h2>
-      <p>Have something to share? Contact us on WhatsApp or explore our featured social media content.</p>
+      <p>Want an ad or a website made? Contact us on WhatsApp, or explore our featured social media content.</p>
       <div class="actions" style="justify-content:center">
         <a href="https://wa.me/923076231094" class="btn" target="_blank" rel="noopener">WhatsApp Us ↗</a>
-        <a href="https://www.facebook.com/share/r/1Df85T21JF/" class="btn btn-outline" target="_blank" rel="noopener">Facebook ↗</a>
+        <a href="https://www.facebook.com/share/1CWNABU4Nj/" class="btn btn-outline" target="_blank" rel="noopener">Facebook ↗</a>
+        <a href="https://youtube.com/@whimzorausa-p6k?feature=shared" class="btn btn-outline" target="_blank" rel="noopener">YouTube ↗</a>
       </div>
       <a href="tel:+923076231094" class="phone">+92 307 6231094</a>
     </div>
@@ -162,6 +227,26 @@ footer p{font-size:12px;color:#858590}
 </footer>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+(function(){
+  const slider = document.getElementById("adSlider");
+  if (!slider || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let hold = false, resumeAt = 0;
+  const pause = ms => { resumeAt = Date.now() + (ms || 6000); };
+  slider.addEventListener("mouseenter", () => hold = true);
+  slider.addEventListener("mouseleave", () => { hold = false; pause(3000); });
+  slider.addEventListener("touchstart", () => pause(8000), {passive:true});
+  slider.addEventListener("wheel", () => pause(8000), {passive:true});
+  slider.addEventListener("play", () => { hold = true; }, true);
+  slider.addEventListener("pause", () => { if (![...slider.querySelectorAll("video")].some(v => !v.paused)) { hold = false; pause(4000); } }, true);
+  setInterval(() => {
+    if (hold || Date.now() < resumeAt) return;
+    const card = slider.querySelector(".video-card");
+    if (!card || slider.scrollWidth <= slider.clientWidth + 4) return;
+    const atEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 6;
+    if (atEnd) slider.scrollTo({left: 0, behavior: "smooth"});
+    else slider.scrollBy({left: card.offsetWidth + 22, behavior: "smooth"});
+  }, 3500);
+})();
 const elements = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(entries => {
@@ -177,5 +262,6 @@ if ("IntersectionObserver" in window) {
   elements.forEach(el => el.classList.add("visible"));
 }
 </script>
+
 </body>
 </html>

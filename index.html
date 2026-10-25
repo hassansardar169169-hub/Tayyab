@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08090d">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <title>Tayyab &amp; Ajar</title>
 <style>
 :root{color-scheme:dark;--bg:#08090d;--panel:#14151b;--gold:#e9c779;--white:#fff;--muted:#aaaab5}
@@ -24,6 +27,8 @@ nav{min-height:72px;display:flex;align-items:center;justify-content:space-betwee
 .btn-outline{background:transparent;color:#fff;border-color:#ffffff40}
 .hero{min-height:590px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 42%,#a47b3025,transparent 40%),radial-gradient(ellipse at 10% 90%,#704c2020,transparent 35%)}
 .hero-logo{position:absolute;right:8%;top:50%;margin-top:-140px;width:280px;height:280px;border-radius:50%;display:grid;place-items:center;text-align:center;border:1px solid #e9c77966;background:radial-gradient(circle,#e9c7792a,#e9c7790a 60%,transparent 72%),#0d0e13;box-shadow:0 0 0 30px #e9c77908,0 0 0 62px #e9c77905,0 0 60px #e9c77922;animation:float 8s ease-in-out infinite}
+.hero-logo{border:0;background:none}
+.hero-logo img{display:block;width:100%;height:100%;border-radius:50%}
 .hero-logo .monogram{font-size:84px;line-height:1}
 .hero-logo .monogram-caption{margin-top:6px}
 .hero-content{position:relative;z-index:1;max-width:760px;padding:88px 0;animation:appear .9s ease both}
@@ -99,7 +104,7 @@ footer p{font-size:12px;color:#858590}
 </header>
 <main>
 <section class="hero" id="home">
-  <div class="hero-logo" aria-label="Tayyab and Ajar logo"><div><div class="monogram">T&amp;A</div><span class="monogram-caption">TAYYAB &amp; AJAR</span></div></div>
+  <div class="hero-logo"><img src="logo.svg" alt="Tayyab and Ajar logo"></div>
   <div class="container">
     <div class="hero-content">
       <div class="eyebrow">✦ Welcome to our official website</div>
